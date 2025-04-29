@@ -7,23 +7,35 @@
  * This is free software, and you are welcome to redistribute it
  * under certain conditions; type `show c' for details.
 */
-
-#include <stddef.h>
 #include "library.h"
 
+// Define true/false values
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
 /**
- * Converts a string representation of a number to its size_t equivalent.
+ * Converts a string to a long integer.
  *
- * @param str A null-terminated string containing the number to convert.
- *            The string must consist of numeric characters ('0'-'9').
- *            Conversion stops at the first non-numeric character.
- * @return The numeric value as a size_t. If the string is empty or contains
- *         no numeric characters, the result is 0.
+ * This function parses the input string and converts it to a long integer.
+ * It handles optional leading whitespace, an optional '+' or '-' sign,
+ * and numeric characters. Parsing stops at the first non-numeric character
+ * or the end of the string.
+ *
+ * @param str A pointer to the null-terminated string to be converted.
+ * @return The converted long integer. If the string represents a negative
+ *         number, the result will be negative.
  */
-size_t atoi(const char* str)
+long atoi(const char* str)
 {
     // Define a result
-    size_t result = 0;
+    long result = 0;
+    long i = 0;
+    int is_negative = FALSE;
 
     // Iterate over all characters
     while (*str != '\0')
@@ -34,6 +46,21 @@ size_t atoi(const char* str)
         // Ignore whitespaces
         if (c == ' ')
         {
+            continue;
+        }
+
+        // Handle negative/positive signs
+        if (c == '+' || c == '-')
+        {
+            // Check if we are outside the first index
+            if (i != 0)
+            {
+                break;
+            }
+
+            // Update is_negative flag
+            is_negative = c == '-';
+            i++;
             continue;
         }
 
@@ -48,6 +75,13 @@ size_t atoi(const char* str)
 
         // Move to the next character
         str++;
+        i++;
+    }
+
+    // Negate the result if needed
+    if (is_negative)
+    {
+        return -result;
     }
 
     return result;
