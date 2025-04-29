@@ -7,6 +7,7 @@
  * This is free software, and you are welcome to redistribute it
  * under certain conditions; type `show c' for details.
 */
+
 #include "library.h"
 
 // Define true/false values
