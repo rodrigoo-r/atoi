@@ -35,9 +35,17 @@ struct GuidedAtoiResult guided_atoi(const char* str)
 {
     // Define a result
     struct GuidedAtoiResult result;
+
     // Initialize the result
     result.value = 0;
     result.success = TRUE;
+
+    // Handle empty strings
+    if (str[0] == '\0')
+    {
+        result.success = FALSE;
+        return result;
+    }
 
     long i = 0;
     int is_negative = FALSE;
