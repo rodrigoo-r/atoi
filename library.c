@@ -31,6 +31,12 @@ size_t atoi(const char* str)
         // Get the current character
         const char c = *str;
 
+        // Ignore whitespaces
+        if (c == ' ')
+        {
+            continue;
+        }
+
         // Check if the char is a digit
         if (c > '9' || c < '0')
         {
