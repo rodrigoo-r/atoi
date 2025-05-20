@@ -11,6 +11,11 @@
 #ifndef ATOI_LIBRARY_H
 #define ATOI_LIBRARY_H
 
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
 /**
  * Represents the result of a guided `atoi` operation.
  *
@@ -52,5 +57,9 @@ long atoi(const char* str);
  *         - `value`: The converted long integer if successful, or undefined if not.
  */
 struct GuidedAtoiResult guided_atoi(const char* str);
+
+#if defined(__cplusplus)
+}
+#endif
 
 #endif //ATOI_LIBRARY_H

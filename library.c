@@ -10,6 +10,11 @@
 
 #include "library.h"
 
+#if defined(__cplusplus)
+extern "C"
+{
+#endif
+
 // Define true/false values
 #ifndef TRUE
 #define TRUE 1
@@ -119,3 +124,7 @@ long atoi(const char* str)
 {
     return guided_atoi(str).value;
 }
+
+#if defined(__cplusplus)
+}
+#endif
