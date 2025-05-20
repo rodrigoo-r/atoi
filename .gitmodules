@@ -1,0 +1,3 @@
+[submodule "include/fluent/string_builder"]
+	path = include/fluent/string_builder
+	url = https://github.com/rodrigoo-r/string_builder.git
