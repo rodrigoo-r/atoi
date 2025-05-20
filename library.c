@@ -120,7 +120,7 @@ struct GuidedAtoiResult guided_atoi(const char* str)
  * @return The converted long integer. If the string represents a negative
  *         number, the result will be negative.
  */
-long atoi(const char* str)
+long atoi_convert(const char* str)
 {
     return guided_atoi(str).value;
 }
