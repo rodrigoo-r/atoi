@@ -3,4 +3,4 @@ project(atoi C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(atoi STATIC include/fluent/atoi/atoi.c)
+add_library(atoi STATIC atoi.c)
