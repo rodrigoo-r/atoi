@@ -32,11 +32,11 @@ extern "C"
  * - `success`: An integer indicating whether the conversion was successful (non-zero for success, zero for failure).
  * - `value`: The converted long integer value if the conversion was successful.
  */
-struct GuidedAtoiResult
+typedef struct
 {
     int success;
     long value;
-};
+} guided_atoi_result_t;
 
 /**
  * Parses a string and attempts to convert it to a long integer, providing detailed results.
@@ -51,10 +51,10 @@ struct GuidedAtoiResult
  *         - `success`: Non-zero if the conversion was successful, zero otherwise.
  *         - `value`: The converted long integer if successful, or undefined if not.
  */
-inline struct GuidedAtoiResult guided_atoi(const char* str)
+inline guided_atoi_result_t guided_atoi(const char* str)
 {
     // Define a result
-    struct GuidedAtoiResult result;
+    guided_atoi_result_t result;
 
     // Initialize the result
     result.value = 0;
