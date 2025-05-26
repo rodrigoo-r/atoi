@@ -8,8 +8,8 @@
  * under certain conditions; type `show c' for details.
 */
 
-#ifndef ATOI_LIBRARY_H
-#define ATOI_LIBRARY_H
+#ifndef FLUENT_LIBC_ATOI_LIBRARY_H
+#define FLUENT_LIBC_ATOI_LIBRARY_H
 
 #if defined(__cplusplus)
 extern "C"
@@ -143,4 +143,4 @@ inline long atoi_convert(const char* str)
 }
 #endif
 
-#endif //ATOI_LIBRARY_H
+#endif //FLUENT_LIBC_ATOI_LIBRARY_H
