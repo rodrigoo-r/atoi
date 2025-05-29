@@ -16,13 +16,10 @@ extern "C"
 {
 #endif
 
-// Define true/false values
-#ifndef TRUE
-#   define TRUE 1
-#endif
-
-#ifndef FALSE
-#   define FALSE 0
+#ifndef FLUENT_LIBC_RELEASE
+#   include <std_bool.h>
+#else
+#   include <fluent/std_bool/std_bool.h>
 #endif
 
 /**
