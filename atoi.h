@@ -48,7 +48,7 @@ typedef struct
  *         - `success`: Non-zero if the conversion was successful, zero otherwise.
  *         - `value`: The converted long integer if successful, or undefined if not.
  */
-inline guided_atoi_result_t guided_atoi(const char* str)
+static inline guided_atoi_result_t guided_atoi(const char* str)
 {
     // Define a result
     guided_atoi_result_t result;
@@ -131,7 +131,7 @@ inline guided_atoi_result_t guided_atoi(const char* str)
  * @return The converted long integer. If the string represents a negative
  *         number, the result will be negative.
  */
-inline long atoi_convert(const char* str)
+static inline long atoi_convert(const char* str)
 {
     return guided_atoi(str).value;
 }
